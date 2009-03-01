@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA06C6F3-B8CA-4BDD-B428-2A79C74CC96C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>developwithpassion.bdd</RootNamespace>
+    <AssemblyName>developwithpassion.bdd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="developwithpassion.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\lib\developwithpassion.commons\developwithpassion.commons.core.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.130, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\tools\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph, Version=2.4.2.130, Culture=neutral, PublicKeyToken=975e84d0c8d6464d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\tools\mbunit\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="rhino.mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\tools\rhino.mocks\rhino.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="contexts\after_all_observations.cs" />
+    <Compile Include="contexts\before_all_observations.cs" />
+    <Compile Include="mbunit\AssertionExtensions.cs" />
+    <Compile Include="mbunit\ComparisonAssertionExtensions.cs" />
+    <Compile Include="mbunit\standard\observations\an_observations_set_of_basic_behaviours.cs" />
+    <Compile Include="mbunit\standard\observations\observations_for_an_instance_sut.cs" />
+    <Compile Include="mbunit\standard\observations\observations_for_a_static_sut.cs" />
+    <Compile Include="mbunit\standard\observations\observations_for_a_sut_without_a_contract.cs" />
+    <Compile Include="mbunit\standard\observations\observations_for_a_sut_with_a_contract.cs" />
+    <Compile Include="containers\DependencyResolver.cs" />
+    <Compile Include="containers\IContainerItemResolver.cs" />
+    <Compile Include="containers\SimpleContainer.cs" />
+    <Compile Include="containers\SimpleContainerItemResolver.cs" />
+    <Compile Include="containers\UnitTestContainer.cs" />
+    <Compile Include="contexts\after_each_observation.cs" />
+    <Compile Include="contexts\after_the_sut_has_been_created.cs" />
+    <Compile Include="contexts\because.cs" />
+    <Compile Include="contexts\before_each_observation.cs" />
+    <Compile Include="contexts\context.cs" />
+    <Compile Include="contexts\create_the_sut.cs" />
+    <Compile Include="contexts\it.cs" />
+    <Compile Include="core\commands\ChainedParameterizedCommand.cs" />
+    <Compile Include="core\commands\IParameterizedCommand.cs" />
+    <Compile Include="mbunit\AppendTestsToTestTree.cs" />
+    <Compile Include="mbunit\BlockRun.cs" />
+    <Compile Include="LazyDelegateFieldInvocation.cs" />
+    <Compile Include="mbunit\RunAllDelegateBlocksInClassHierarchyTopDown.cs" />
+    <Compile Include="mbunit\TestDelegateInvoker.cs" />
+    <Compile Include="mbunit\TestTreeArgs.cs" />
+    <Compile Include="mbunit\DelegateRunInvoker.cs" />
+    <Compile Include="core\commands\ChainedCommand.cs" />
+    <Compile Include="core\commands\CommandExtensions.cs" />
+    <Compile Include="core\commands\ICommand.cs" />
+    <Compile Include="core\commands\NullCommand.cs" />
+    <Compile Include="core\extensions\Iteration.cs" />
+    <Compile Include="core\extensions\StringExtensions.cs" />
+    <Compile Include="core\extensions\TypeCasting.cs" />
+    <Compile Include="core\extensions\TypeExtensions.cs" />
+    <Compile Include="DelegateFieldInvocation.cs" />
+    <Compile Include="mbunit\standard\ObservationAttribute.cs" />
+    <Compile Include="mbunit\standard\ObservationsAttribute.cs" />
+    <Compile Include="mbunit\EnumerableAssertionExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RhinoMocksExtensions.cs" />
+    <Compile Include="VoidMethodCallOccurance.cs" />
+    <Compile Include="Wait.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

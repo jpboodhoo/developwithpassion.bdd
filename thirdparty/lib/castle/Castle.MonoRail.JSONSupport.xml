@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Castle.MonoRail.JSONSupport</name>
+    </assembly>
+    <members>
+        <member name="T:Castle.Monorail.JSONSupport.JSONBinderAttribute">
+            <summary>
+            Extends <see cref="T:Castle.MonoRail.Framework.DataBindAttribute"/> with 
+            the <see cref="T:Newtonsoft.Json.JavaScriptConvert"/> functionality.
+            </summary>
+        </member>
+        <member name="M:Castle.Monorail.JSONSupport.JSONBinderAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Castle.Monorail.JSONSupport.JSONBinderAttribute"/> class.
+            For use with <see cref="M:Castle.MonoRail.Framework.Helpers.AjaxHelper.GenerateJSProxy(System.String)"/>,
+            make sure you are using Prototype 1.5.1 or later.
+            </summary>
+            <param name="entryKey">The entry key, which is the form or 
+            querystring key that identifies the JSON persisted content</param>
+        </member>
+    </members>
+</doc>

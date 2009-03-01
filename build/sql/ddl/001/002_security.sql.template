@@ -1,0 +1,12 @@
+use [@initial_catalog@]
+GO
+if not exists (select * from dbo.sysusers where name = N'@asp_net_account@' and uid < 16382)
+	EXEC sp_grantdbaccess N'@asp_net_account@', N'@asp_net_account@'
+GO
+
+if not exists (select * from dbo.sysusers where name = N'WebUser' and uid > 16399)
+	EXEC sp_addrole N'WebUser'
+GO
+
+exec sp_addrolemember N'WebUser', N'@asp_net_account@'
+GO

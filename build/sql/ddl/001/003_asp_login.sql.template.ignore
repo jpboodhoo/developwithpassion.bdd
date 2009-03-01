@@ -1,0 +1,2 @@
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = N'@asp_net_account@')
+CREATE LOGIN [@asp_net_account@] FROM WINDOWS WITH DEFAULT_DATABASE=[@initial_catalog@]
